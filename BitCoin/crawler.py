@@ -16,7 +16,8 @@ os.makedirs('data', exist_ok=True)
 
 # 定义基础URL
 base_url = "https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryByHashtag"
-hashtag = "BitCoin"
+hashtag = "%23BitCoin"
+tag_name = hashtag[3:]  # 去掉开头的#
 params_template = "?hashtag={}&pageIndex={}&pageSize=20&orderBy=LATEST"
 
 # 定义请求头
@@ -63,7 +64,7 @@ for page_index in range(1, 3):
 current_time_str = datetime.now().strftime("%Y%m%d%H%M%S")
 
 # 生成文件名
-file_name = f"data/catch_{current_time_str}.json"
+file_name = f"/{encoded_hashtag}/data/catch_{current_time_str}.json"
 
 # 保存到文件
 save_data_to_file(response_data, file_name)
