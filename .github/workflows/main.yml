@@ -7,17 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: run start.sh
         run: |
-          bash ./start.sh
-          permissions:
-              contents: read
-              pages: write     
+          bash ./start.sh 
       - name: GitHub Push
 
         uses: ad-m/github-push-action@v0.6.0
