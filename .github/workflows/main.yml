@@ -15,8 +15,11 @@ jobs:
       - name: run start.sh
         run: |
           bash ./start.sh
-          
+          permissions:
+              contents: read
+              pages: write     
       - name: GitHub Push
+
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: $\{{ secrets.GITHUB_TOKEN }}
