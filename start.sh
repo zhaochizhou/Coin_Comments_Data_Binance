@@ -1,5 +1,5 @@
-python3 ./Bit/crawler.py
-python3 ./doge⚡/crawler.py
+python3 BitCoin/crawler.py
+python3 doge⚡/crawler.py
 
 year=`date +%Y `
 month=`date +%m `
