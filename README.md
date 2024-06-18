@@ -5,7 +5,7 @@
 **from jsdelivr**
 ``` bash
 
-https://
+https://cdn.jsdelivr.net/gh/HollowData/Coin_Comments_Data_Binance@main/data/{coin_type}/catch_{time}.json
 
 ```
 
@@ -21,12 +21,25 @@ https://
     "message": null,
     "messageDetail": null,
     "data": [
-        {
+        "hashtag": {
+            "hashtag": "{coin_type}",
+            "contentCount": {*int},
+            "viewCount": {*int},
+            "status": {*int},
+            "token": null,
+            "tokenTradingPair": null,
+            "tradingPairDTOList": [],
+            "description": null,
+            "hashtagId": {*int},
+            "contentCount7days": {*int},
+            "contentCount30days": {*int}
+        },
+        feedData":[
             "id": ...,
             "content": ...,
             "date": ...,
             "..." : ...,
-        },
+        ],
         ...
     ]
 }
