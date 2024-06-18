@@ -3,7 +3,7 @@ name: 币安评论
 on:
   workflow_dispatch:
   schedule:
-  - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
   build:
@@ -15,9 +15,14 @@ jobs:
       - name: run start.sh
         run: |
           bash ./start.sh 
-      - name: GitHub Push
 
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
-          branch: main
+      - name: GitHub Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Automated commit from GitHub Actions"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
