@@ -2,6 +2,7 @@ import os
 import requests
 import json
 from datetime import datetime
+import urllib.parse
 
 def save_data_to_file(data, file_name):
     try:
@@ -16,7 +17,9 @@ os.makedirs('data', exist_ok=True)
 
 # 定义基础URL
 base_url = "https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryByHashtag"
-hashtag = "%23doge%E2%9A%A1"
+hashtag = "#doge⚡"
+tag_name = hashtag[1:]  # 去掉开头的#
+encoded_hashtag = urllib.parse.quote(hashtag)
 params_template = "?hashtag={}&pageIndex={}&pageSize=20&orderBy=LATEST"
 
 # 定义请求头
@@ -39,7 +42,7 @@ response_data = {
 
 # 遍历页数
 for page_index in range(1, 3):
-    url = base_url + params_template.format(hashtag, page_index)
+    url = base_url + params_template.format(encoded_hashtag, page_index)
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()  # 抛出异常，如果响应状态码不为200
@@ -63,7 +66,8 @@ for page_index in range(1, 3):
 current_time_str = datetime.now().strftime("%Y%m%d%H%M%S")
 
 # 生成文件名
-file_name = f"data/catch_{current_time_str}.json"
+file_name = f"/{tag_name}/data/catch_{current_time_str}.json"
 
 # 保存到文件
 save_data_to_file(response_data, file_name)
+
