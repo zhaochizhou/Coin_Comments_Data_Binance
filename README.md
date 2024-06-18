@@ -34,7 +34,7 @@ https://cdn.jsdelivr.net/gh/HollowData/Coin_Comments_Data_Binance@main/data/{coi
             "contentCount7days": {*int},
             "contentCount30days": {*int}
         },
-        feedData":[
+        "feedData":[
             "id": ...,
             "content": ...,
             "date": ...,
