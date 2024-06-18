@@ -17,8 +17,8 @@ os.makedirs('data', exist_ok=True)
 
 # 定义基础URL
 base_url = "https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryByHashtag"
-hashtag = "#doge⚡"
-tag_name = hashtag[1:]  # 去掉开头的#
+hashtag = "%23doge%E2%9A%A1"
+tag_name = hashtag[3:]  # 去掉开头的#
 encoded_hashtag = urllib.parse.quote(hashtag)
 params_template = "?hashtag={}&pageIndex={}&pageSize=20&orderBy=LATEST"
 
