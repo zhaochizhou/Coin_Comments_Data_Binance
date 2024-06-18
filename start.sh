@@ -1,3 +1,5 @@
+pip install requests
+
 python3 BitCoin/crawler.py
 python3 doge⚡/crawler.py
 
