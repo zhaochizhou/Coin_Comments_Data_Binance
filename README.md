@@ -1,5 +1,9 @@
 # 币安评论记录数据集 Binance Comments Record Dataset
 
+
+本数据集目前支持#BitCoin和#doge⚡两个tag，每半个小时更新一次。
+
+
 ## 调用 Call
 
 **from jsdelivr**
