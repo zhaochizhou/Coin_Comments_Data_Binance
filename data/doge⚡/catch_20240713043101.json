@@ -1,0 +1,9 @@
+{
+    "code": "000001",
+    "message": "Failed to retrieve data",
+    "messageDetail": "Failed to retrieve data from page 2: 403 Client Error: Forbidden for url: https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryByHashtag?hashtag=%23doge%E2%9A%A1&pageIndex=2&pageSize=20&orderBy=LATEST",
+    "data": {
+        "hashtag": null,
+        "feedData": []
+    }
+}
